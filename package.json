@@ -1,6 +1,6 @@
 {
   "name": "react-consent-gdpr",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A React component for managing the user consent related to GDPR.",
   "main": "lib/index.js",
   "sideEffects": false,

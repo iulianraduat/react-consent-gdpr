@@ -31,6 +31,6 @@ declare module 'react-consent-gdpr' {}
 
 export default ReactConsentGdpr;
 
-declare function isConsentEnabledFor(
+export function isConsentEnabledFor(
   cookiesType: keyof GdprCookieTypes
 ): boolean;

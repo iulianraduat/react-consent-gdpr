@@ -110,3 +110,7 @@ export default App;
 ### 1.1.0
 
 - Added a function to check if a cookies category is accepted
+
+### 1.1.1
+
+- Fixed the typedef for isConsentEnabledFor
