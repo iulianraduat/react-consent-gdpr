@@ -59,3 +59,10 @@ function getAndSetEmptyConsent(): GdprConsent {
   setConsent(emptyConsent);
   return emptyConsent;
 }
+
+export function isConsentEnabledFor(
+  cookiesType: keyof GdprCookieTypes
+): boolean {
+  const consent = getConsent();
+  return consent[cookiesType] ?? false;
+}

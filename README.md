@@ -18,12 +18,12 @@ You can access the storybook for this component [here](https://iulian-radu-at.gi
 
 ## Props
 
-| Name             | Type                                            | Required | Default | Description                                                |
-| ---------------- | ----------------------------------------------- | -------- | ------- | ---------------------------------------------------------- |
-| autoHideDuration | number                                          | no       | 2000    | The delay in ms after which the info dialog is auto-closed |
-| cookies          | Cookies                                         | no       | \*      | The list of cookies grouped by category                    |
-| onChange         | (consent: Array<keyof GdprCookieTypes>) => void | no       | -       | Callback to notify changes of consent                      |
-| theme            | Theme                                           | no       | -       | A Material-UI theme                                        |
+| Name             | Type                                     | Required | Default | Description                                                |
+| ---------------- | ---------------------------------------- | -------- | ------- | ---------------------------------------------------------- |
+| autoHideDuration | number                                   | no       | 2000    | The delay in ms after which the info dialog is auto-closed |
+| cookies          | Cookies                                  | no       | \*      | The list of cookies grouped by category                    |
+| onChange         | (consent: Array<CookieCategory>) => void | no       | -       | Callback to notify changes of consent                      |
+| theme            | Theme                                    | no       | -       | A Material-UI theme                                        |
 
 Note\*: The default categories are Necessary, Preferences, Statistics and Marketing.
 
@@ -39,6 +39,14 @@ The fields accepted in the objects used as values:
 | name        | string \| RegExp \| (name: string) => boolean | yes      | -       | The cookie name (exact/regexp/validation function)  |
 | privacyUrl  | string                                        | no       | -       | A link to the site were is explained how it is used |
 | source      | string                                        | yes      | -       | Which web site set/use it                           |
+
+There is also provided a function to check if a category of cookies is accepted:
+
+```javascript
+isConsentEnabledFor(cookiesCategory: CookieCategory): boolean;
+```
+
+The CookieCategory means one of the following values: marketing, necessary, others, preferences, or statistics.
 
 ---
 
@@ -98,3 +106,7 @@ export default App;
 
 - react-consent-gdpr is made publicly available
 - All messages are only in english and cannot be changed
+
+### 1.1.0
+
+- Added a function to check if a cookies category is accepted

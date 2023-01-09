@@ -30,3 +30,7 @@ declare class ReactConsentGdpr extends React.Component<ReactConsentGdprProps> {}
 declare module 'react-consent-gdpr' {}
 
 export default ReactConsentGdpr;
+
+declare function isConsentEnabledFor(
+  cookiesType: keyof GdprCookieTypes
+): boolean;
