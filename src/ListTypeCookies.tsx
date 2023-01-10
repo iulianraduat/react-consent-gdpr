@@ -1,4 +1,6 @@
 import Stack from '@mui/material/Stack/Stack';
+import useTheme from '@mui/material/styles/useTheme';
+import useMediaQuery from '@mui/material/useMediaQuery/useMediaQuery';
 import React, { useCallback, useState } from 'react';
 import { CookiesDetailsDialog } from './CookiesDetailsDialog';
 import { MarketingCookieCheckbox } from './MarketingCookieCheckbox';
@@ -62,9 +64,19 @@ export function ListTypeCookies(props: Props) {
     setCategoryAndFoundCookies(undefined);
   }, []);
 
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+  const wrap = matches ? 'wrap' : undefined;
+
   return (
     <>
-      <Stack direction="row" gap={2}>
+      <Stack
+        direction="row"
+        columnGap={2}
+        rowGap={0.5}
+        flexWrap={wrap}
+        justifyContent="center"
+      >
         {cookiesNecessary && (
           <NecessaryCookieCheckbox
             cookies={cookiesNecessary}

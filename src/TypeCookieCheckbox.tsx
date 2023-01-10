@@ -56,7 +56,7 @@ export function TypeCookieCheckbox(props: Props) {
       />
 
       <TypeCookieLabel
-        foundCookies={foundCookies}
+        foundCookies={knownCookies.length > 0 ? foundCookies : undefined}
         label={label}
         tooltip={description}
         onShowDetails={onShowDetails}

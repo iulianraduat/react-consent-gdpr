@@ -11,7 +11,7 @@ const sx: SxProps = {
 };
 
 type Props = {
-  foundCookies: Array<CookieMeta>;
+  foundCookies?: Array<CookieMeta>;
   label: string;
   onShowDetails: (category: string, foundCookies: Array<CookieMeta>) => void;
   tooltip: string;
@@ -22,11 +22,13 @@ export function TypeCookieLabel(props: Props) {
   return (
     <Stack direction="row" gap={0.5} sx={sx}>
       <TypeCookieText tooltip={tooltip} label={label} />
-      <TypeCookieChip
-        label={label}
-        foundCookies={foundCookies}
-        onShowDetails={onShowDetails}
-      />
+      {foundCookies !== undefined ? (
+        <TypeCookieChip
+          label={label}
+          foundCookies={foundCookies}
+          onShowDetails={onShowDetails}
+        />
+      ) : null}
     </Stack>
   );
 }

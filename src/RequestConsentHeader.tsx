@@ -9,7 +9,6 @@ type Props = {
 
 export function RequestConsentHeader(props: Props) {
   const { onCancel } = props;
-
   return (
     <Stack
       direction="row"

@@ -33,7 +33,7 @@ export const AllCookieCategories: ComponentStory<typeof ReactConsentGdpr> =
                 '13 months (used to store a few details about the user such as the unique visitor ID)',
             },
           ],
-          // others: [],
+          others: [],
           preferences: [],
           statistics: [],
         }}

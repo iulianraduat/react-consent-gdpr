@@ -56,6 +56,8 @@ Bellow you can see how it looks:
 
 ![Consent already provided](images/consented.png 'Consent already provided')
 
+![Require consent](images/mixed-chips.png 'Require consent')
+
 ![Require consent](images/require-consent.png 'Require consent')
 
 ![Detail of cookies from one category](images/cookie-details.png 'Detail of cookies from one category')
@@ -114,3 +116,8 @@ export default App;
 ### 1.1.1
 
 - Fixed the typedef for isConsentEnabledFor
+
+### 1.2.0
+
+- Do not display the number of cookies for a category defined without a list of cookies
+- Fixed the display on mobile devices
