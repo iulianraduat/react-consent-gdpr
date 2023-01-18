@@ -121,3 +121,7 @@ export default App;
 
 - Do not display the number of cookies for a category defined without a list of cookies
 - Fixed the display on mobile devices
+
+### 1.2.1
+
+- Removed the generation of sourcemaps which produced warning as the typescript source files are not provided
