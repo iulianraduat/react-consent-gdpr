@@ -14,11 +14,6 @@
     "skipLibCheck": true,
     "esModuleInterop": true
   },
-  "include": [
-    "./src/**/*.tsx",
-    "./src/**/*.ts",
-    "./storybook/**/*.tsx",
-    "./storybook/**/*.ts"
-  ],
+  "include": ["./src/**/*.tsx", "./src/**/*.ts"],
   "exclude": ["node_modules"]
 }

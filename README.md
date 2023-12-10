@@ -130,3 +130,7 @@ export default App;
 ### 1.2.2
 
 - Updated packages
+
+### 1.2.3
+
+- Fixed bundled lib
