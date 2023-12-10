@@ -69,6 +69,7 @@ Bellow you can see how it looks:
 | ReactConsentGdpr _uses_ | React  | MaterialUI |
 | ----------------------: | :----: | :--------: |
 |                   1.0.x | 18.0.0 |   5.11.3   |
+|                   1.2.x | 18.0.0 |  5.14.20   |
 
 ### About versioning schema used for ReactConsentGdpr
 
@@ -125,3 +126,7 @@ export default App;
 ### 1.2.1
 
 - Removed the generation of sourcemaps which produced warning as the typescript source files are not provided
+
+### 1.2.2
+
+- Updated packages

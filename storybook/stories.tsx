@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import ReactConsentGdpr from '../src/ReactConsentGdpr';
 
@@ -7,61 +7,52 @@ const style: React.CSSProperties = {
   gridTemplateColumns: 'repeat(2, minmax(300px ,500px))',
 };
 
-export default {
+const meta: Meta<typeof ReactConsentGdpr> = {
   title: 'ReactConsentGdpr',
   component: ReactConsentGdpr,
-} as ComponentMeta<typeof ReactConsentGdpr>;
+} as Meta<typeof ReactConsentGdpr>;
+export default meta;
+type Story = StoryObj<typeof ReactConsentGdpr>;
 
-export const DefaultCookieCategories: ComponentStory<typeof ReactConsentGdpr> =
-  () => (
-    <div style={style}>
-      <ReactConsentGdpr />
-    </div>
-  );
-
-export const AllCookieCategories: ComponentStory<typeof ReactConsentGdpr> =
-  () => (
-    <div style={style}>
-      <ReactConsentGdpr
-        cookies={{
-          marketing: [],
-          necessary: [
-            {
-              name: '_pk_id.8.1fff',
-              source: 'Matomo',
-              description:
-                '13 months (used to store a few details about the user such as the unique visitor ID)',
-            },
-          ],
-          others: [],
-          preferences: [],
-          statistics: [],
-        }}
-      />
-    </div>
-  );
-
-export const CustomCookieCategories: ComponentStory<typeof ReactConsentGdpr> =
-  () => (
-    <div style={style}>
-      <ReactConsentGdpr
-        cookies={{
-          necessary: [],
-          statistics: [],
-        }}
-      />
-    </div>
-  );
-
-export const CustomAutoHide: ComponentStory<typeof ReactConsentGdpr> = () => (
+export const DefaultCookieCategories = () => (
   <div style={style}>
-    <ReactConsentGdpr autoHideDuration={6000} />
+    <ReactConsentGdpr />
   </div>
 );
 
-export const MatchCookiesInACategoryByName: ComponentStory<
-  typeof ReactConsentGdpr
-> = () => (
+export const AllCookieCategories = () => (
+  <div style={style}>
+    <ReactConsentGdpr
+      cookies={{
+        marketing: [],
+        necessary: [
+          {
+            name: '_pk_id.8.1fff',
+            source: 'Matomo',
+            description:
+              '13 months (used to store a few details about the user such as the unique visitor ID)',
+          },
+        ],
+        others: [],
+        preferences: [],
+        statistics: [],
+      }}
+    />
+  </div>
+);
+
+export const CustomCookieCategories = () => (
+  <div style={style}>
+    <ReactConsentGdpr
+      cookies={{
+        necessary: [],
+        statistics: [],
+      }}
+    />
+  </div>
+);
+
+export const CustomAutoHide = () => (
   <div style={style}>
     <ReactConsentGdpr
       cookies={{
@@ -78,9 +69,7 @@ export const MatchCookiesInACategoryByName: ComponentStory<
   </div>
 );
 
-export const MatchCookiesInACategoryByARegexp: ComponentStory<
-  typeof ReactConsentGdpr
-> = () => (
+export const MatchCookiesInACategoryByARegexp = () => (
   <div style={style}>
     <ReactConsentGdpr
       cookies={{
@@ -97,9 +86,7 @@ export const MatchCookiesInACategoryByARegexp: ComponentStory<
   </div>
 );
 
-export const MatchCookiesInACategoryByAValidationFunction: ComponentStory<
-  typeof ReactConsentGdpr
-> = () => (
+export const MatchCookiesInACategoryByAValidationFunction = () => (
   <div style={style}>
     <ReactConsentGdpr
       cookies={{
@@ -116,9 +103,7 @@ export const MatchCookiesInACategoryByAValidationFunction: ComponentStory<
   </div>
 );
 
-export const CookiesDetailsWithPrivacyUrl: ComponentStory<
-  typeof ReactConsentGdpr
-> = () => (
+export const CookiesDetailsWithPrivacyUrl = () => (
   <div style={style}>
     <ReactConsentGdpr
       cookies={{
